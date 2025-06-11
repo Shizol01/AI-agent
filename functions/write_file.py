@@ -1,6 +1,10 @@
 import os
 
-def write_file(working_directory, file_path, content):
+def write_file(**kwargs):
+    working_directory = kwargs.get("working_directory")
+    file_path = kwargs.get("file_path")
+    content = kwargs.get("content")
+
     try:
 
         absolute_directory = os.path.abspath(os.path.join(working_directory, file_path))

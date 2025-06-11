@@ -1,7 +1,10 @@
 import os
 
 
-def get_file_content(working_directory, file_path):
+def get_file_content(**kwargs):
+    working_directory = kwargs.get("working_directory")
+    file_path = kwargs.get("file_path")
+
     try:
         absolute_directory = os.path.abspath(os.path.join(working_directory, file_path))
         if not absolute_directory.startswith(os.path.abspath(working_directory)):
